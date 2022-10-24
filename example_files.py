@@ -14,3 +14,25 @@ def ReadLastRow():
     print(text[-1])
 # день чудесный  (последняя строка) или длина - 1 прописать вместо [-1]
     data.close()
+
+colors = ['red', 'green', 'yellow']
+data = open('colors.txt', 'w')  #add дозаписывает после каждого запуска, write вписывает с нуля(старое удаляет, новое вписывает)
+data.writelines(colors)
+data.write('\ntext\n')
+data.close()
+
+#Сделать запись в файле, тогда close и не надо
+with open('file.txt', 'w') as data:
+    data.write('line1\n')
+
+
+# Теперь как читать файл
+path = 'file.txt'
+data = open(path, 'r')
+for line in data:
+    print(line)
+data.close()
+
+#Вызов метода. Создала описание метода в отдельном файле с названием function_example
+import function_example as func
+print(func.f(1))
